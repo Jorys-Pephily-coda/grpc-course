@@ -6,9 +6,13 @@ with grpc.insecure_channel("localhost:50051") as channel:
     # 2. Le stub = le client généré qui connaît les méthodes du service
     stub = user_pb2_grpc.UserServiceStub(channel)
     # 3. L'appel RPC : comme une fonction locale... qui traverse le réseau
-    response = stub.GetUser(user_pb2.GetUserRequest(user_id=3))
-    print(f"Nom : {response.user.name}")
-    print(f"Email : {response.user.email}")
-    print(f"Street : {response.user.address.street}")
-    print(f"City : {response.user.address.city}")
-    print(f"Nickname : {response.user.nickname}")  # Affiche le message complet, pour debug
+    try:
+        response = stub.GetUser(user_pb2.GetUserRequest(user_id=8))
+        print(f"Nom : {response.user.name}")
+        print(f"Email : {response.user.email}")
+        print(f"Street : {response.user.address.street}")
+        print(f"City : {response.user.address.city}")
+        print(f"Nickname : {response.user.nickname}")
+
+    except grpc.RpcError as e:
+        print(f"Erreur gRPC : {e.code()} - {e.details()}")
