@@ -7,7 +7,7 @@ with grpc.insecure_channel("localhost:50051") as channel:
     stub = user_pb2_grpc.UserServiceStub(channel)
     # 3. L'appel RPC : comme une fonction locale... qui traverse le réseau
     try:
-        response = stub.GetUser(user_pb2.GetUserRequest(user_id=8))
+        response = stub.GetUser(user_pb2.GetUserRequest(user_id=3))
         print(f"Nom : {response.user.name}")
         print(f"Email : {response.user.email}")
         print(f"Street : {response.user.address.street}")
