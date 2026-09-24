@@ -14,7 +14,7 @@ message User {                            // Ce que le serveur RÉPOND
   string name = 2;                        // Nom (chaîne UTF-8)
   string email = 3;                        // Adresse e-mail
   Address address = 4;                     // Adresse (message imbriqué)
-  string nickname = 4;                     // Pseudo
+  string nickname = 5;                     // Pseudo
 }
 
 message Address {
