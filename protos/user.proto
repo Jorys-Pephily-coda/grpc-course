@@ -13,6 +13,12 @@ message User {                            // Ce que le serveur RÉPOND
   int32 id = 1;                           // Identifiant de l'utilisateur
   string name = 2;                        // Nom (chaîne UTF-8)
   string email = 3;                        // Adresse e-mail
+  Address address = 4;                     // Adresse (message imbriqué)
+}
+
+message Address {
+  string street = 1;
+  string city = 2;
 }
 
 message GetUserResponse {                 // Enveloppe de réponse (bonne pratique : pouvoir
