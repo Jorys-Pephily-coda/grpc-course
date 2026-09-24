@@ -9,3 +9,5 @@ with grpc.insecure_channel("localhost:50051") as channel:
     response = stub.GetUser(user_pb2.GetUserRequest(user_id=3))
     print(f"Nom : {response.user.name}")
     print(f"Email : {response.user.email}")
+    print(f"Street : {response.user.address.street}")
+    print(f"City : {response.user.address.city}")
