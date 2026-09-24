@@ -8,7 +8,7 @@ from generated import user_pb2, user_pb2_grpc
 FAKE_DB = {
     1: user_pb2.User(id=1, name="Mounir", email="mounir@example.com", address=user_pb2.Address(street="123 Main St", city="Paris")),
     2: user_pb2.User(id=2, name="Alice", email="alice@example.com", address=user_pb2.Address(street="456 Oak Ave", city="Lyon")),
-    3: user_pb2.User(id=3, name="Jorys", email="jorys.pephily.pro@gmail.com", address=user_pb2.Address(street="Somewhere", city="In a City")),
+    3: user_pb2.User(id=3, name="Jorys", email="jorys.pephily.pro@gmail.com", address=user_pb2.Address(street="Somewhere", city="In a City"), nickname="Mister J"),
 }
 
 # ---- 2. Le servicer : on hérite de la classe générée par protoc ----

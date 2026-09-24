@@ -11,3 +11,4 @@ with grpc.insecure_channel("localhost:50051") as channel:
     print(f"Email : {response.user.email}")
     print(f"Street : {response.user.address.street}")
     print(f"City : {response.user.address.city}")
+    print(f"Nickname : {response.user.nickname}")  # Affiche le message complet, pour debug
